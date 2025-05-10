@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Profile + Feed</title>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen">
+    <!-- Layout Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 px-6 py-10">
+      <!-- Sidebar/Profile -->
+      <aside class="lg:col-span-3 animate-fade-in">
+        <div class="bg-zinc-900/70 backdrop-blur-lg p-6 rounded-xl shadow-2xl">
+          <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold mb-1">Welcome, <%= user.name %>!</h1>
+            <p class="text-sm text-gray-400">Here's your profile info</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-white/10 p-4 rounded-xl border border-gray-700">
+              <p class="text-xs text-gray-400">Full Name</p>
+              <h2 class="text-base font-semibold"><%= user.name %></h2>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-gray-700">
+              <p class="text-xs text-gray-400">Username</p>
+              <h2 class="text-base font-semibold"><%= user.username %></h2>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-gray-700">
+              <p class="text-xs text-gray-400">Age</p>
+              <h2 class="text-base font-semibold"><%= user.age %></h2>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl border border-gray-700">
+              <p class="text-xs text-gray-400">Email</p>
+              <h2 class="text-base font-semibold"><%= user.email %></h2>
+            </div>
+          </div>
+
+          <div class="mt-6 text-center space-y-2">
+            <a
+              href="/createpost"
+              class="text-indigo-400 hover:underline text-sm block"
+              >+ Create Post</a
+            >
+            <a href="/logout" class="text-red-400 hover:underline text-sm block"
+              >Logout</a
+            >
+          </div>
+        </div>
+      </aside>
+
+      <!-- Feed Section -->
+      <main class="lg:col-span-6 lg:col-start-5 space-y-6 animate-fade-in">
+        <!-- Example Post 1 -->
+        <div
+          class="bg-zinc-800/70 backdrop-blur-md rounded-2xl p-5 border border-zinc-700 shadow-md"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-10 h-10 bg-zinc-500 rounded-full"></div>
+            <div>
+              <p class="font-semibold text-white">user123</p>
+              <p class="text-xs text-gray-400">2 hours ago</p>
+            </div>
+          </div>
+          <p class="text-white mb-4">Exploring the stars ✨ #space</p>
+          <img
+            src="https://source.unsplash.com/random/600x300?stars"
+            alt="Post Image"
+            class="rounded-lg w-full mb-4"
+          />
+          <div class="flex items-center space-x-3 text-gray-400 text-sm">
+            <button class="hover:text-pink-500 transition-all">❤️ Like</button>
+            <button class="hover:text-blue-400">💬 Comment</button>
+            <button class="hover:text-green-400">🔗 Share</button>
+          </div>
+        </div>
+
+        <!-- Example Post 2 -->
+        <div
+          class="bg-zinc-800/70 backdrop-blur-md rounded-2xl p-5 border border-zinc-700 shadow-md"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-10 h-10 bg-zinc-500 rounded-full"></div>
+            <div>
+              <p class="font-semibold text-white">tech_guru</p>
+              <p class="text-xs text-gray-400">4 hours ago</p>
+            </div>
+          </div>
+          <p class="text-white mb-4">Just built my first robot arm! 🤖</p>
+          <video controls class="w-full rounded-lg mb-4">
+            <source src="path_to_your_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="flex items-center space-x-3 text-gray-400 text-sm">
+            <button class="hover:text-pink-500 transition-all">❤️ Like</button>
+            <button class="hover:text-blue-400">💬 Comment</button>
+            <button class="hover:text-green-400">🔗 Share</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

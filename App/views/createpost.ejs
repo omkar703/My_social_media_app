@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create & Manage Posts</title>
+  </head>
+  <body class="bg-gray-950 text-white min-h-screen p-6">
+    <div class="max-w-3xl mx-auto space-y-10">
+      <!-- Create Post Form -->
+      <div class="bg-zinc-900/80 p-8 rounded-2xl shadow-xl">
+        <h1 class="text-2xl font-bold mb-6 text-center">Create a New Post</h1>
+        <form
+          action="/post"
+          method="POST"
+          enctype="multipart/form-data"
+          class="space-y-5"
+        >
+          <div>
+            <label for="caption" class="text-sm text-gray-400">Caption</label>
+            <textarea
+              name="caption"
+              id="caption"
+              rows="3"
+              class="w-full p-3 bg-zinc-800 rounded-xl border border-gray-700 text-white"
+              placeholder="Write something..."
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="media" class="text-sm text-gray-400 block mb-2"
+              >Upload Image or Video</label
+            >
+            <input
+              type="file"
+              name="media"
+              accept="image/*,video/*"
+              class="block w-full bg-zinc-800 text-white p-2 rounded-xl border border-gray-700"
+            />
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-xl font-semibold"
+            >
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Existing Posts (Example Data) -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Your Posts</h2>
+
+        <div class="space-y-6">
+          <!-- Sample Post 1 -->
+          <div
+            class="bg-zinc-900/80 p-5 rounded-xl shadow-md border border-gray-700"
+          >
+            <p class="text-gray-300 mb-3">This is a sample caption</p>
+            <img
+              src="https://via.placeholder.com/400x200"
+              alt="Post image"
+              class="rounded-lg w-full mb-4"
+            />
+
+            <form class="flex flex-col md:flex-row md:items-center gap-3">
+              <input
+                type="text"
+                name="caption"
+                value="This is a sample caption"
+                class="flex-grow p-2 rounded bg-zinc-800 border border-gray-700 text-white"
+              />
+              <button
+                type="submit"
+                class="bg-yellow-500 hover:bg-yellow-600 px-4 py-1 rounded"
+              >
+                Update
+              </button>
+            </form>
+
+            <form class="mt-2 text-right">
+              <button
+                type="submit"
+                class="text-red-400 hover:underline text-sm"
+                onclick="return confirm('Delete this post?');"
+              >
+                Delete
+              </button>
+            </form>
+          </div>
+
+          <!-- Sample Post 2 -->
+          <div
+            class="bg-zinc-900/80 p-5 rounded-xl shadow-md border border-gray-700"
+          >
+            <p class="text-gray-300 mb-3">Another post with a video</p>
+            <video controls class="w-full rounded-lg mb-4">
+              <source src="sample-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <form class="flex flex-col md:flex-row md:items-center gap-3">
+              <input
+                type="text"
+                name="caption"
+                value="Another post with a video"
+                class="flex-grow p-2 rounded bg-zinc-800 border border-gray-700 text-white"
+              />
+              <button
+                type="submit"
+                class="bg-yellow-500 hover:bg-yellow-600 px-4 py-1 rounded"
+              >
+                Update
+              </button>
+            </form>
+
+            <form class="mt-2 text-right">
+              <button
+                type="submit"
+                class="text-red-400 hover:underline text-sm"
+                onclick="return confirm('Delete this post?');"
+              >
+                Delete
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

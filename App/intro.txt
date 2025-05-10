@@ -1,0 +1,7 @@
+users can write posts and comments 
+user create 
+login and register 
+logout 
+post creating 
+post like 
+post delete but only the owner can delete

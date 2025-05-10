@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sign Up</title>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+      }
+
+      .button-transition {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .button-transition:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-gray-800 to-black text-white">
+    <div
+      class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      style="
+        background-image: url('https://source.unsplash.com/1600x900/?technology,night');
+      "
+    >
+      <div
+        class="bg-zinc-900/50 p-8 rounded-xl shadow-lg backdrop-blur-xl max-w-lg w-full animate-fade-in"
+      >
+        <h1 class="text-4xl font-extrabold text-center text-white mb-8">
+          Create Your Account
+        </h1>
+        <form action="/register" class="space-y-6" method="post">
+          <!-- Name Input -->
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              class="w-full p-4 text-gray-800 bg-white/80 rounded-xl border border-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition"
+              required
+            />
+          </div>
+
+          <!-- Username Input -->
+          <div>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              class="w-full p-4 text-gray-800 bg-white/80 rounded-xl border border-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition"
+              required
+            />
+          </div>
+
+          <!-- Age Input -->
+          <div>
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              class="w-full p-4 text-gray-800 bg-white/80 rounded-xl border border-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition"
+              required
+            />
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              class="w-full p-4 text-gray-800 bg-white/80 rounded-xl border border-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition"
+              required
+            />
+          </div>
+
+          <!-- Password Input -->
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="w-full p-4 text-gray-800 bg-white/80 rounded-xl border border-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              class="w-full p-4 text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 button-transition active:bg-indigo-800"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+
+        <div class="text-center mt-4">
+          <p class="text-sm text-gray-400">
+            Already have an account?
+            <a href="/login" class="text-indigo-400 hover:underline">Log In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
